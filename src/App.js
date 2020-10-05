@@ -15,28 +15,71 @@ S.Container = styled.div`
   flex-direction: column;
   align-items: center;
   font-family: 'Poppins', sans-serif;
-
-`
-
-S.Header = styled.header`
+  box-sizing: border-box;
+  width: 100vw;
+  text-align: left;
+  
+  
+  `
+  
+  S.Header = styled.header`
+  box-sizing: border-box;
   display: flex;
   flex-direction: column;
-  padding: 20px;
-
-  h1 {
+  align-items: center;
+  .title {
     align-self: flex-start;
+    margin-left: 30px;
+    margin-top: 15vh;
+    margin-bottom: 0px;
   }
-
-  h2 {
-    align-self: flex-start
+  .descript {
+    align-self: flex-start;
+    margin-left: 30px;
   }
-
-  .code {
-    margin: 3vh 0px 1vh 0px;
+  h4 {
+    align-self: flex-start;
+    font-weight: 200;
+    margin-left: 30px;
+    margin-top: 0px;
+    font-size: 15px;
   }
+  
+  
+  section {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    max-width: 500px;
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 5px 5px 100px #e6e6e6;
+    margin-top: 4vh;
+    width: 95%;
 
-  react-p5 {
-    align-self: center;
+    h1 {
+      align-self: flex-start;
+    }
+  
+    h2 {
+      align-self: flex-start
+    }
+  
+    p {
+      margin-top: 1vh;
+    }
+  
+    .code {
+      margin: 3vh 0px 1vh 0px;
+      align-self: center;
+
+    }
+  
+    .react-p5 {
+      align-self: center;
+      // display: none;
+    }
   }
 `
 
@@ -53,8 +96,9 @@ if (width > cap) displayWidth = cap
   return (
     <S.Container>
       <S.Header >
-        <h1>Generative art study</h1>
-        <div>Experimentation of algorithmically generated art via 
+        <h1 className = "title">Generative art study</h1>
+        <h4>by <a href = "https://vladmog.com/">Vladislav Mogilevskiy</a></h4>
+        <div className = "descript">Experiments in algorithmically generated art via 
         <a href = "https://p5js.org/"> p5.js</a>
         </div>
         {/* <h2>Day 1</h2>
@@ -63,16 +107,20 @@ if (width > cap) displayWidth = cap
         <Sketch1 />
         
         <h2>Day 2</h2> */}
-        <h2>
-          <a href = "https://en.wikipedia.org/wiki/Vera_Moln%C3%A1r">Vera Molnár</a> Study: <br />Structure de Quadrilateres
-        </h2>
-        <a href = "https://www.google.com/search?q=Structure+de+Quadrilateres&tbm=isch&ved=2ahUKEwjztfWE-pzsAhX6KjQIHdEaCuAQ2-cCegQIABAA&oq=Structure+de+Quadrilateres&gs_lcp=CgNpbWcQA1AAWABgxzFoAHAAeACAAQCIAQCSAQCYAQCqAQtnd3Mtd2l6LWltZw&sclient=img&ei=cs56X_O0CfrV0PEP0bWogA4&bih=801&biw=1422&rlz=1C5CHFA_enUS906US906">Inspo</a>
-        <a className = "code" href = "https://github.com/vladmog/p5/blob/master/src/components/sketch2.js">Stacked shapes: Code</a>
-        <Sketch2 />
-        <a className = "code" href = "https://github.com/vladmog/p5/blob/master/src/components/sketch4.js">Chaos shapes: Code</a>
-        <Sketch4 />
-        <a className = "code" href = "https://github.com/vladmog/p5/blob/master/src/components/sketch3.js">Nested shapes: Code</a>
-        <Sketch3 />
+        <section>
+          <h2>
+            <a href = "https://en.wikipedia.org/wiki/Vera_Moln%C3%A1r">Vera Molnár</a> Study: <br />Structure de Quadrilateres
+          </h2>
+          <p>Algorithms aiming to replicate the 1960s studies of quadrilateral generation by Vera Molnár. </p>
+          <p>Quadrilaterals generated with increasing degrees of irregularity. Stacked differently in each sample.</p>
+          <a href = "https://www.google.com/search?q=Structure+de+Quadrilateres&tbm=isch&ved=2ahUKEwjztfWE-pzsAhX6KjQIHdEaCuAQ2-cCegQIABAA&oq=Structure+de+Quadrilateres&gs_lcp=CgNpbWcQA1AAWABgxzFoAHAAeACAAQCIAQCSAQCYAQCqAQtnd3Mtd2l6LWltZw&sclient=img&ei=cs56X_O0CfrV0PEP0bWogA4&bih=801&biw=1422&rlz=1C5CHFA_enUS906US906">Inspo</a>
+          <a className = "code" href = "https://github.com/vladmog/p5/blob/master/src/components/sketch2.js">Stacked shapes: Code</a>
+          <Sketch2 />
+          <a className = "code" href = "https://github.com/vladmog/p5/blob/master/src/components/sketch4.js">Chaos shapes: Code</a>
+          <Sketch4 />
+          <a className = "code" href = "https://github.com/vladmog/p5/blob/master/src/components/sketch3.js">Nested shapes: Code</a>
+          <Sketch3 />
+        </section>
       </S.Header>
     </S.Container>
   );

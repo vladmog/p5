@@ -8,8 +8,8 @@ export default (props) => {
     const setup = (p5, canvasParentRef) => {
         canvasWidth = p5.windowWidth
         if(canvasWidth > 500) canvasWidth = 500
-        canvasWidth -= 50
-        p5.createCanvas(canvasWidth, canvasWidth).parent(canvasParentRef);  
+        canvasWidth -= 100
+        p5.createCanvas(canvasWidth - 200, canvasWidth).parent(canvasParentRef);  
 
         
     };
@@ -101,7 +101,7 @@ export default (props) => {
     const windowResized = (p5) => {
         canvasWidth = p5.windowWidth
         if(canvasWidth > 500) canvasWidth = 500
-        canvasWidth -= 50
+        canvasWidth -= 100
         pulse = 2;
         isPulseIncreasing = true;
         pulseRange = [1, 120]
