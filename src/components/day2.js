@@ -12,7 +12,7 @@ export default (props) => {
     };
 
     let count = 0
-    let layers = 10 // amount of squares to overlap
+    let layers = 2 // amount of squares to overlap
     let gridSize = 10
 
     const draw = (p5) => {
@@ -56,7 +56,8 @@ export default (props) => {
             let columnIt = 1
             let size = canvasWidth/gridSize
             for (let i = 0; i < gridSize*gridSize; i++){
-                drawSquare(newOrigin, size, rowIt-1)
+                // drawSquare(newOrigin, size, rowIt-1)
+                drawSquare(newOrigin, size, columnIt - 1)
                 if (columnIt !== gridSize){
                     columnIt ++
                     newOrigin[0] += size
