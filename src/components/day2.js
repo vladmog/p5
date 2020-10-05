@@ -3,7 +3,6 @@ import Sketch from "react-p5";
  
 export default (props) => {
 
- 
     const setup = (p5, canvasParentRef) => {
         p5.createCanvas(500, 500).parent(canvasParentRef);  
         p5.background(255);
@@ -12,7 +11,7 @@ export default (props) => {
     let count = 0
     const draw = (p5) => {
         if (count < 10){
-            // p5.background(0) 
+            // p5.background(255) 
 
             const drawSquare = (origin, size, randomness) => {
                 // randomness = [0,10]
