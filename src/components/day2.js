@@ -16,6 +16,7 @@ export default (props) => {
     let gridSize = 10
 
     const draw = (p5) => {
+
         if (count < layers){
             // p5.background(255) // comment out to overlap squares
 
