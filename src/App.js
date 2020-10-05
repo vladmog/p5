@@ -12,11 +12,10 @@ function App() {
 
 const { height, width } = useWindowDimensions();
 
-console.log("height: ", height)
-console.log("width: ", width)
+
 
 let displayWidth = width - 50;
-let cap = 800
+let cap = 450
 if (width > cap) displayWidth = cap
   return (
     <div className="App">

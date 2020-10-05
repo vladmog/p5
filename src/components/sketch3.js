@@ -5,11 +5,16 @@ import Sketch from "react-p5";
  
 export default (props) => {
 
-    let canvasWidth = props.canvasWidth;
-    let canvasHeight = props.canvasHeight;
+
+    let canvasWidth
 
     const setup = (p5, canvasParentRef) => {
-        p5.createCanvas(canvasWidth, canvasHeight).parent(canvasParentRef);  
+        canvasWidth = p5.windowWidth
+        if(canvasWidth > 500) canvasWidth = 500
+        canvasWidth -= 50
+        p5.createCanvas(canvasWidth, canvasWidth).parent(canvasParentRef);  
+
+        
         p5.background(255);
         p5.noLoop()
     };
@@ -214,6 +219,14 @@ export default (props) => {
         }
         count ++      
     };
+
+
+    const windowResized = (p5) => {
+        canvasWidth = p5.windowWidth
+        if(canvasWidth > 500) canvasWidth = 500
+        canvasWidth -= 50
+        p5.resizeCanvas(canvasWidth, canvasWidth);
+    }
  
     return <Sketch setup={setup} draw={draw} />;
 };
