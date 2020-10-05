@@ -11,7 +11,7 @@ export default (props) => {
     const setup = (p5, canvasParentRef) => {
         canvasWidth = p5.windowWidth
         if(canvasWidth > 500) canvasWidth = 500
-        canvasWidth -= 50
+        canvasWidth -= 75
         p5.createCanvas(canvasWidth, canvasWidth).parent(canvasParentRef);  
 
         
@@ -224,7 +224,7 @@ export default (props) => {
     const windowResized = (p5) => {
         canvasWidth = p5.windowWidth
         if(canvasWidth > 500) canvasWidth = 500
-        canvasWidth -= 50
+        canvasWidth -= 75
         p5.resizeCanvas(canvasWidth, canvasWidth);
     }
  

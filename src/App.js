@@ -27,24 +27,29 @@ S.Container = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  .title {
-    align-self: flex-start;
-    margin-left: 30px;
+
+
+  .intro {
     margin-top: 15vh;
-    margin-bottom: 0px;
+    box-shadow: none;
+    .title {
+      align-self: flex-start;
+      margin-left: 0px;
+      margin-bottom: 0px;
+      font-size: 32px;
+    }
+    .descript {
+      align-self: flex-start;
+      margin-left: 0px;
+    }
+    h4 {
+      align-self: flex-start;
+      font-weight: 200;
+      margin-left: 0px;
+      margin-top: 0px;
+      font-size: 15px;
+    }
   }
-  .descript {
-    align-self: flex-start;
-    margin-left: 30px;
-  }
-  h4 {
-    align-self: flex-start;
-    font-weight: 200;
-    margin-left: 30px;
-    margin-top: 0px;
-    font-size: 15px;
-  }
-  
   
   section {
     box-sizing: border-box;
@@ -96,11 +101,11 @@ if (width > cap) displayWidth = cap
   return (
     <S.Container>
       <S.Header >
-        <h1 className = "title">Generative art study</h1>
-        <h4>by <a href = "https://vladmog.com/">Vladislav Mogilevskiy</a></h4>
-        <div className = "descript">Experiments in algorithmically generated art via 
-        <a href = "https://p5js.org/"> p5.js</a>
-        </div>
+        <section className = "intro"><h1 className = "title">GENERATIVE ART STUDY</h1>
+          <h4>by <a href = "https://vladmog.com/">Vladislav Mogilevskiy</a></h4>
+          <div className = "descript">Experiments in algorithmically generated art via <a href = "https://p5js.org/">p5.js</a>.
+          </div>
+        </section>
         {/* <h2>Day 1</h2>
         <h3>First animation</h3>
         <a href = "https://github.com/vladmog/p5/blob/master/src/components/day1.js">Code</a>
@@ -113,7 +118,7 @@ if (width > cap) displayWidth = cap
           </h2>
           <p>Algorithms aiming to replicate the 1960s studies of quadrilateral generation by Vera Molnár. </p>
           <p>Quadrilaterals generated with increasing degrees of irregularity. Stacked differently in each sample.</p>
-          <a href = "https://www.google.com/search?q=Structure+de+Quadrilateres&tbm=isch&ved=2ahUKEwjztfWE-pzsAhX6KjQIHdEaCuAQ2-cCegQIABAA&oq=Structure+de+Quadrilateres&gs_lcp=CgNpbWcQA1AAWABgxzFoAHAAeACAAQCIAQCSAQCYAQCqAQtnd3Mtd2l6LWltZw&sclient=img&ei=cs56X_O0CfrV0PEP0bWogA4&bih=801&biw=1422&rlz=1C5CHFA_enUS906US906">Inspo</a>
+          <a href = "https://www.google.com/search?q=Structure+de+Quadrilateres&tbm=isch&ved=2ahUKEwjztfWE-pzsAhX6KjQIHdEaCuAQ2-cCegQIABAA&oq=Structure+de+Quadrilateres&gs_lcp=CgNpbWcQA1AAWABgxzFoAHAAeACAAQCIAQCSAQCYAQCqAQtnd3Mtd2l6LWltZw&sclient=img&ei=cs56X_O0CfrV0PEP0bWogA4&bih=801&biw=1422&rlz=1C5CHFA_enUS906US906">Inspiration</a>
           <a className = "code" href = "https://github.com/vladmog/p5/blob/master/src/components/sketch2.js">Stacked shapes: Code</a>
           <Sketch2 />
           <a className = "code" href = "https://github.com/vladmog/p5/blob/master/src/components/sketch4.js">Chaos shapes: Code</a>
