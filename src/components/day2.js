@@ -1,18 +1,25 @@
 import React, {useState} from "react";
 import Sketch from "react-p5";
+
+let canvasWidth = 500;
+let canvasHeight = 500;
  
 export default (props) => {
 
     const setup = (p5, canvasParentRef) => {
-        p5.createCanvas(500, 500).parent(canvasParentRef);  
+        p5.createCanvas(canvasWidth, canvasHeight).parent(canvasParentRef);  
         p5.background(255);
     };
 
     let count = 0
-    const draw = (p5) => {
-        if (count < 10){
-            // p5.background(255) 
+    let layers = 10 // amount of squares to overlap
+    let gridSize = 10
 
+    const draw = (p5) => {
+        if (count < layers){
+            // p5.background(255) // comment out to overlap squares
+
+            // Re-usable function that draws a square of a given size, location, and randomness
             const drawSquare = (origin, size, randomness) => {
                 // randomness = [0,10]
                 let originX = origin[0]
@@ -41,30 +48,26 @@ export default (props) => {
             }
     
     
-            let gridSize = 10
     
-            let origin = [0,0]
-            let canvasWidth = 500
+            // Plot grid of squares
+            let newOrigin = [0,0] // [x,y]
             let rowIt = 1
             let columnIt = 1
             let size = canvasWidth/gridSize
             for (let i = 0; i < gridSize*gridSize; i++){
-                drawSquare(origin, size, rowIt-1)
+                drawSquare(newOrigin, size, rowIt-1)
                 if (columnIt !== gridSize){
                     columnIt ++
-                    origin[0] += size
+                    newOrigin[0] += size
                 } else {
                     columnIt = 1
-                    origin[0] = 0
-                    origin[1] += size
+                    newOrigin[0] = 0
+                    newOrigin[1] += size
                     rowIt += 1
                 }
             }
-            
-
         }
-        count ++
-        
+        count ++      
     };
  
     return <Sketch setup={setup} draw={draw} />;
