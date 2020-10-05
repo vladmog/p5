@@ -2,11 +2,16 @@ import React, {useState} from "react";
 import Sketch from "react-p5";
  
 export default (props) => {
-    let canvasWidth = props.canvasWidth;
-    let canvasHeight = props.canvasHeight;
+
+    let canvasWidth
 
     const setup = (p5, canvasParentRef) => {
-        p5.createCanvas(canvasWidth, canvasHeight).parent(canvasParentRef);  
+        canvasWidth = p5.windowWidth
+        if(canvasWidth > 500) canvasWidth = 500
+        canvasWidth -= 50
+        p5.createCanvas(canvasWidth, canvasWidth).parent(canvasParentRef);  
+
+        
     };
 
     let pulse = 2;
@@ -91,6 +96,14 @@ export default (props) => {
 
    
     };
+
+
+    const windowResized = (p5) => {
+        canvasWidth = p5.windowWidth
+        if(canvasWidth > 500) canvasWidth = 500
+        canvasWidth -= 50
+        p5.resizeCanvas(canvasWidth, canvasWidth);
+    }
  
     return <Sketch setup={setup} draw={draw} />;
 };
