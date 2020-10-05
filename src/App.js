@@ -119,10 +119,10 @@ if (width > cap) displayWidth = cap
           <p>Algorithms aiming to replicate the 1960s studies of quadrilateral generation by Vera Molnár. </p>
           <p>Quadrilaterals generated with increasing degrees of irregularity. Stacked differently in each sample.</p>
           <a href = "https://www.google.com/search?q=Structure+de+Quadrilateres&tbm=isch&ved=2ahUKEwjztfWE-pzsAhX6KjQIHdEaCuAQ2-cCegQIABAA&oq=Structure+de+Quadrilateres&gs_lcp=CgNpbWcQA1AAWABgxzFoAHAAeACAAQCIAQCSAQCYAQCqAQtnd3Mtd2l6LWltZw&sclient=img&ei=cs56X_O0CfrV0PEP0bWogA4&bih=801&biw=1422&rlz=1C5CHFA_enUS906US906">Inspiration</a>
-          <a className = "code" href = "https://github.com/vladmog/p5/blob/master/src/components/sketch2.js">Stacked shapes: Code</a>
-          <Sketch2 />
           <a className = "code" href = "https://github.com/vladmog/p5/blob/master/src/components/sketch4.js">Chaos shapes: Code</a>
           <Sketch4 />
+          <a className = "code" href = "https://github.com/vladmog/p5/blob/master/src/components/sketch2.js">Stacked shapes: Code</a>
+          <Sketch2 />
           <a className = "code" href = "https://github.com/vladmog/p5/blob/master/src/components/sketch3.js">Nested shapes: Code</a>
           <Sketch3 />
         </section>
