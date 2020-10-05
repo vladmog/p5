@@ -15,7 +15,7 @@ export default (props) => {
     const draw = (p5) => {
         let speed = 1;
         let count =20;
-        p5.background(150);
+        p5.background(255);
 
         // Creates a line box
         const createBox = (u, l, length) => {
