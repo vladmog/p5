@@ -2,10 +2,11 @@ import React, {useState} from "react";
 import Sketch from "react-p5";
  
 export default (props) => {
+    let canvasWidth = props.canvasWidth;
+    let canvasHeight = props.canvasHeight;
 
- 
     const setup = (p5, canvasParentRef) => {
-        p5.createCanvas(500, 500).parent(canvasParentRef);   
+        p5.createCanvas(canvasWidth, canvasHeight).parent(canvasParentRef);  
     };
 
     let pulse = 2;
@@ -19,7 +20,7 @@ export default (props) => {
 
         // Creates a line box
         const createBox = (u, l, length) => {
-            let gap = 500/length;
+            let gap = canvasWidth/length;
             let r = l + length
             for (let i = 0; i < count; i ++){
                 let modifier
@@ -45,9 +46,9 @@ export default (props) => {
         }
 
         // Create grid of line boxes
-        let u = 100
+        let u = 80
         let l = 0
-        let length = 500/3
+        let length = canvasWidth/3
         for (let i = 0; i < 9; i++){
             createBox(u, l, length)
             l += length
@@ -82,7 +83,7 @@ export default (props) => {
         //         modifier = -pulse
         //     }
         //     p5.line(0,i*gap,250,i*gap + modifier)
-        //     p5.line(250,i*gap+modifier,500,i*gap)
+        //     p5.line(250,i*gap+modifier,canvasWidth,i*gap)
         // }
 
 

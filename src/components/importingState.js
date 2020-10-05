@@ -9,9 +9,11 @@ export default (props) => {
     let yy = y;
     // const [size, setSize] = useState(70)
 
- 
+    let canvasWidth = props.canvasWidth;
+    let canvasHeight = props.canvasHeight;
+
     const setup = (p5, canvasParentRef) => {
-        p5.createCanvas(500, 500).parent(canvasParentRef);
+        p5.createCanvas(canvasWidth, canvasHeight).parent(canvasParentRef);  
         
     };
  
