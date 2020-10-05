@@ -102,6 +102,9 @@ export default (props) => {
         canvasWidth = p5.windowWidth
         if(canvasWidth > 500) canvasWidth = 500
         canvasWidth -= 50
+        pulse = 2;
+        isPulseIncreasing = true;
+        pulseRange = [1, 120]
         p5.resizeCanvas(canvasWidth, canvasWidth);
     }
  
