@@ -15,7 +15,8 @@ function App() {
         <Sketch1 />
         
         <h2>Day 2</h2>
-        <h3>Vera Molnar Study: Structure de Quadrilateres</h3>
+        <h3>
+          <a href = "https://en.wikipedia.org/wiki/Vera_Moln%C3%A1r">Vera Molnár</a> Study: Structure de Quadrilateres</h3>
         <a href = "https://www.google.com/search?q=Structure+de+Quadrilateres&rlz=1C5CHFA_enUS906US906&sxsrf=ALeKk03OJbHl0234HwdPYZtSDsuHa7MmtA:1601866577357&source=lnms&tbm=isch&sa=X&ved=2ahUKEwiMmMiCupzsAhXjGjQIHTHDAlsQ_AUoAXoECAsQAw&biw=1422&bih=801#imgrc=996Xl7KGglNRnM">Inspo</a>
         <a href = "https://github.com/vladmog/p5/blob/master/src/components/day2.js">Code</a>
         <Sketch2 />
