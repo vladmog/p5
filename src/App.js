@@ -131,7 +131,9 @@ if (width > cap) displayWidth = cap
           <Sketch2 />
           <a className = "code" href = "https://github.com/vladmog/p5/blob/master/src/components/sketch3.js">Nested shapes: Code</a>
           <Sketch3 />
+          <a className = "code" href = "https://github.com/vladmog/p5/blob/master/src/components/sketch5.js">Radial: Code</a>
           <Sketch5 />
+          <a className = "code" href = "https://github.com/vladmog/p5/blob/master/src/components/sketch5b.js">Radial Molnár: Code</a>
           <Sketch5b />
 
         </section>
