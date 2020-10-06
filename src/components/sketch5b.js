@@ -27,7 +27,7 @@ export default (props) => {
 
 
         let layers = 20 // 15
-        let gap = 1;
+        let gap = 0;
         let radialInterval = 10
         if (!layers) layers = p5.random(2,15)
         let quadSize = circleRadius/layers
