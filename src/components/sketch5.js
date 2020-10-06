@@ -27,7 +27,7 @@ export default (props) => {
         console.log("circleRadius!!: ", circleRadius, canvasWidth)
         let layers = 5
         let quadSize = circleRadius/layers
-        
+
         let randomLayers = p5.random(1, 5)
         let randomAngle = p5.random(180, 360)
         let randomInterval = p5.random(2, 30)
@@ -35,9 +35,10 @@ export default (props) => {
         for (let layer = 1; layer <= randomLayers; layer++){
             let stepRadius = quadSize*layer
             while (degrees <= randomAngle){
+                let lineLength = circleRadius * .8
                 p5.push()
                 p5.rotate(degrees)
-                p5.line(stepRadius,0,stepRadius-150,150);
+                p5.line(stepRadius,0,stepRadius-lineLength,lineLength);
                 degrees += randomInterval
                 p5.pop()
             }
