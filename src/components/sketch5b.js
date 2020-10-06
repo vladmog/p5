@@ -7,8 +7,6 @@ export default (props) => {
 
     let canvasWidth
 
-
-
     const setup = (p5, canvasParentRef) => {
         canvasWidth = p5.windowWidth
         if(canvasWidth > 500) canvasWidth = 500
@@ -24,9 +22,12 @@ export default (props) => {
     const draw = (p5) => {
         let degrees = 0 // iteratable
         let stepAroundProgress = 0
-        let circleRadius = 165;
+        let circleRadius = ((canvasWidth/2) - 30);
+        console.log("circleRadius!!: ", circleRadius, canvasWidth)
+
+
         let layers = 20 // 15
-        let gap = 0;
+        let gap = 1;
         let radialInterval = 10
         if (!layers) layers = p5.random(2,15)
         let quadSize = circleRadius/layers
@@ -78,7 +79,7 @@ export default (props) => {
             let rotationInterval = stepCirc/circleStepCount
             // while (degrees <= 359){
             while (circleStepCount < stepCirc){
-                console.log("SAP", layer)
+                // console.log("SAP", layer)
                 p5.push()
                 p5.rotate(degrees)
                 // p5.line(stepRadius,0,stepRadius,0);
