@@ -30,7 +30,7 @@ export default (props) => {
 
         let randomLayers = p5.random(1, 5)
         let randomAngle = p5.random(180, 360)
-        let randomInterval = p5.random(2, 30)
+        let randomInterval = p5.random(2, 10)
         p5.translate(canvasWidth/2,canvasWidth/2);
         for (let layer = 1; layer <= randomLayers; layer++){
             let stepRadius = quadSize*layer

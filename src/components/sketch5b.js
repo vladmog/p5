@@ -30,7 +30,7 @@ export default (props) => {
         let gap = 0;
         let radialInterval = 10
         if (!layers) layers = p5.random(2,15)
-        let quadSize = circleRadius/layers
+        let quadSize = (circleRadius/layers) 
 
         const drawSquare = (origin, size, randomScale, randomness) => {
             // randomness = [0,10]
