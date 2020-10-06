@@ -7,6 +7,8 @@ import Sketch1 from "./components/sketch1";
 import Sketch2 from "./components/sketch2";
 import Sketch3 from "./components/sketch3";
 import Sketch4 from "./components/sketch4";
+import Sketch5 from "./components/sketch5";
+import Sketch5b from "./components/sketch5b";
 
 const S = {}
 
@@ -113,6 +115,8 @@ if (width > cap) displayWidth = cap
         <Sketch1 />
         
         <h2>Day 2</h2> */}
+        {/* <section>
+        </section> */}
         <section>
           <h2>
             <a href = "https://en.wikipedia.org/wiki/Vera_Moln%C3%A1r">Vera Molnár</a> Study: <br />Structure de Quadrilateres
@@ -127,7 +131,11 @@ if (width > cap) displayWidth = cap
           <Sketch2 />
           <a className = "code" href = "https://github.com/vladmog/p5/blob/master/src/components/sketch3.js">Nested shapes: Code</a>
           <Sketch3 />
+          <Sketch5 />
+          <Sketch5b />
+
         </section>
+        
       </S.Header>
     </S.Container>
   );
