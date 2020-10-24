@@ -116,7 +116,10 @@ if (width > cap) displayWidth = cap
         <Sketch1 />
         
         <h2>Day 2</h2> */}
-
+        <section>
+          <a className = "code" href = "https://github.com/vladmog/p5/blob/master/src/components/sketch9.js">10PRINT: Code</a>
+          <Sketch9 />
+        </section>
         <section>
           <h2>
             <a href = "https://en.wikipedia.org/wiki/Vera_Moln%C3%A1r">Vera Molnár</a> Study: <br />Structure de Quadrilateres
@@ -135,10 +138,6 @@ if (width > cap) displayWidth = cap
           <Sketch5 />
           <a className = "code" href = "https://github.com/vladmog/p5/blob/master/src/components/sketch5b.js">Radial Molnár: Code</a>
           <Sketch5b />
-        </section>
-        <section>
-          <a className = "code" href = "google.com">10PRINT: Code</a>
-          <Sketch9 />
         </section>
       </S.Header>
     </S.Container>
