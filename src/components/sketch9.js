@@ -21,24 +21,28 @@ export default (props) => {
         p5.background(255)
         let gridSize = 50;
         let cellSize = canvasWidth / gridSize
-        let i;
-        let j;
-        for (i = 0; i < canvasHeight; i += cellSize){
-            for (j = 0; j < canvasWidth; j += cellSize){
+
+        // Generates a grid of "\" and "/" symbols that create a maze
+        for (let i = 0; i < canvasHeight; i += cellSize){
+            for (let j = 0; j < canvasWidth; j += cellSize){
+                // Define four corner coordinates of grid cell
                 let x1 = j;
-                let y1 = i;
                 let x2 = j + cellSize;
+                let y1 = i;
                 let y2 = i + cellSize;
+
+                // Ratio defines likelyhood of diagonal being a "\" or a "/"
                 let ratio
                 if (j < canvasHeight / 2){
                     ratio = 0.85
                 } else {
                     ratio = 0.15
                 }
+
                 if (p5.random(0,1) > ratio){
-                    p5.line(x1, y1, x2, y2)
+                    p5.line(x1, y1, x2, y2) // "\""
                 } else {
-                    p5.line(x1, y2, x2, y1)
+                    p5.line(x1, y2, x2, y1) // "/""
                 }
             }
         }
