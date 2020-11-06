@@ -110,7 +110,12 @@ function App() {
 					</div>
 				</section>
 				<section>
-					<a className="code">Nested circles: Code</a>
+					<a
+						className="code"
+						href="https://github.com/vladmog/p5/blob/master/src/components/sketch10.js"
+					>
+						Nested circles: Code
+					</a>
 					<Sketch10 />
 				</section>
 				{/* <h2>Day 1</h2>
