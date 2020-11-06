@@ -16,9 +16,9 @@ export default props => {
 
 	const draw = p5 => {
 		p5.background(255);
-		let gridSize = 15;
+		let gridSize = 25;
 		let cellSize = canvasWidth / gridSize;
-		p5.strokeWeight(10);
+		p5.strokeWeight(7);
 
 		// Generates a grid of "\" and "/" symbols that create a maze
 		for (let i = 0; i < canvasHeight; i += cellSize) {
@@ -31,10 +31,21 @@ export default props => {
 
 				// Ratio defines likelyhood of diagonal being a "\" or a "/"
 				let ratio;
+				let balance = 0.85;
+				let balanceInverse = 1 - balance;
+
 				if (j < canvasHeight / 2) {
-					ratio = 0.85;
+					if (i < canvasHeight / 2) {
+						ratio = balance;
+					} else {
+						ratio = balanceInverse;
+					}
 				} else {
-					ratio = 0.15;
+					if (i < canvasHeight / 2) {
+						ratio = balanceInverse;
+					} else {
+						ratio = balance;
+					}
 				}
 
 				if (p5.random(0, 1) > ratio) {
