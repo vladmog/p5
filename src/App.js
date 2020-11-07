@@ -11,6 +11,7 @@ import Sketch5 from "./components/sketch5";
 import Sketch5b from "./components/sketch5b";
 import Sketch9 from "./components/sketch9";
 import Sketch10 from "./components/sketch10";
+import Sketch11 from "./components/sketch11";
 
 const S = {};
 
@@ -108,6 +109,15 @@ function App() {
 						Experiments in algorithmically generated art via{" "}
 						<a href="https://p5js.org/">p5.js</a>.
 					</div>
+				</section>
+				<section>
+					<a
+						className="code"
+						href="https://github.com/vladmog/p5/blob/master/src/components/sketch10.js"
+					>
+						Nested variable circles: Code
+					</a>
+					<Sketch11 />
 				</section>
 				<section>
 					<a

@@ -11,49 +11,72 @@ export default props => {
 		canvasWidth -= 75;
 		canvasHeight = canvasWidth;
 		p5.createCanvas(canvasWidth, canvasHeight).parent(canvasParentRef);
-		p5.noLoop();
+		// p5.noLoop();
 	};
 
+	let iterator = 0;
+
 	const draw = p5 => {
+		// Iterator creates sin wave for offset value
+		let offset = p5.sin(iterator);
+		if (iterator === 360) {
+			iterator = 0;
+		} else {
+			iterator += 0.02;
+		}
+
+		// Helper function
 		const createCircle = (center, diameter) => {
 			// center: Array[Number,Number]
 			// diameter: Number
 			p5.ellipse(center[0], center[1], diameter, diameter);
 		};
 
-		const createNestedCircle = (nCenter, nDiameter, layers) => {
-			createCircle(nCenter, nDiameter);
+		const createNestedCircle = (nCenter, nDiameter, layers, offset) => {
+			// nCenter: Array[Number, Number]
+			// nDiameter: Number
+			// layers: Number
+			// offset: Number(-1 <= offset <= 1)
+
+			// Define layer diameters and centers
 			let layerDiameters = [];
 			let layerCenters = [];
-			for (let layer = 1; layer <= layers; layer++) {
+			for (let layer = layers; layer >= 1; layer--) {
+				if (layer === layers) {
+					layerDiameters.push(nDiameter);
+					layerCenters.push(nCenter);
+					continue;
+				}
+
+				// Parent layer's center and diameter determine child layer's center
+				let prevDiameter = layerDiameters[layerDiameters.length - 1];
+				let prevCenter = layerCenters[layerCenters.length - 1];
+
 				let layerDiameter = (layer / layers) * nDiameter;
+
+				// Potential Center Range: x length within parent layer within which child's center may be placed
+				let potentialCenterRange = prevDiameter - layerDiameter;
+
 				let layerCenterX =
-					nCenter[0] - nDiameter / 2 + layerDiameter / 2;
+					prevCenter[0] + (potentialCenterRange * offset) / 2;
 				let layerCenterY = nCenter[1];
+
 				layerDiameters.push(layerDiameter);
 				layerCenters.push([layerCenterX, layerCenterY]);
 			}
+
+			// Plot layers
 			for (let layer = 0; layer < layerDiameters.length; layer++) {
-				createCircle(
-					layerCenters[layers - layer - 1],
-					layerDiameters[layers - layer - 1]
-				);
+				createCircle(layerCenters[layer], layerDiameters[layer]);
 			}
-
-			// Linear decrease in diameter size (decrease in fractions of diameter i.e 5 steps of 1/5th of D)
-			// Equal movement of center of circle in a certain direction
-			// Vertical or Horizontal movement are straightforward.
-			// For diagonal movement, calculate hypotenuse (or derive by rotation to simplify things)
-
-			// for next iteration, include angle and distance of smallest circle's center from main center (range from 0 to main diameter - minor radius)
-			// perhaps rotated circles within rotated circles via recursive functions
 		};
 
+		//
 		let center = [canvasHeight / 2, canvasHeight / 2];
 		let diameter = canvasHeight - 50;
 		let layers = 5;
 
-		createNestedCircle(center, diameter, layers);
+		createNestedCircle(center, diameter, layers, offset);
 	};
 
 	const windowResized = p5 => {
