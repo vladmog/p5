@@ -18,7 +18,8 @@ export default props => {
 		p5.background(255);
 		let gridSize = 15;
 		let cellSize = canvasWidth / gridSize;
-		p5.strokeWeight(12);
+		// p5.strokeWeight(12);
+		p5.strokeWeight(canvasWidth * 0.028);
 
 		// Generates a grid of "\" and "/" symbols that create a maze
 		for (let i = 0; i < canvasHeight; i += cellSize) {
