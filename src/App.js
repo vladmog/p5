@@ -113,7 +113,7 @@ function App() {
 				<section>
 					<a
 						className="code"
-						href="https://github.com/vladmog/p5/blob/master/src/components/sketch10.js"
+						href="https://github.com/vladmog/p5/blob/master/src/components/sketch11.js"
 					>
 						Nested variable circles: Code
 					</a>
