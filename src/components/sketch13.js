@@ -11,8 +11,6 @@ export default props => {
 		canvasWidth -= 75;
 		canvasHeight = canvasWidth;
 		p5.createCanvas(canvasWidth, canvasHeight).parent(canvasParentRef);
-		p5.noFill();
-		p5.angleMode("degrees");
 		p5.frameRate(30);
 		// p5.noLoop();
 	};
@@ -20,11 +18,19 @@ export default props => {
 	let iterator = 0;
 
 	const draw = p5 => {
-		// Iterator creates sin wave for offset value
-		p5.translate(canvasWidth / 2, canvasWidth / 2);
-		let offset = p5.sin(iterator) / 5 + 0.2;
+		const detail = 11;
+		const frequency = 5;
+		// p5.background(255);
+		p5.noFill();
+		p5.translate(canvasHeight / 2, canvasHeight / 2);
 
-		iterator += 1;
+		// Iterator creates sin wave for offset value
+		let offset = p5.cos(iterator * frequency);
+		if (iterator > 360 * 12) {
+			// iterator = 0;
+		} else {
+			iterator += detail;
+		}
 
 		// Helper function
 		const createCircle = (center, diameter) => {
@@ -34,6 +40,8 @@ export default props => {
 		};
 
 		const createNestedCircle = (nCenter, nDiameter, layers, offset) => {
+			p5.translate(-canvasHeight / 2, -canvasHeight / 2);
+
 			// nCenter: Array[Number, Number]
 			// nDiameter: Number
 			// layers: Number
@@ -67,29 +75,19 @@ export default props => {
 			}
 
 			// Plot layers
-
 			for (let layer = 0; layer < layerDiameters.length; layer++) {
 				createCircle(layerCenters[layer], layerDiameters[layer]);
 			}
 		};
 
 		//
-		let center = [0, 0];
+		let center = [canvasHeight / 2, canvasHeight / 2];
 		let diameter = canvasHeight - 50;
-		let layers = 50;
-		let directions = 3;
+		let layers = 2;
+
 		p5.push();
 		p5.rotate(iterator);
-		p5.background(255);
 		createNestedCircle(center, diameter, layers, offset);
-		for (let i = 0; i < directions; i++) {
-			let degreeInterval = 360 / directions;
-			p5.push();
-			p5.rotate(degreeInterval * i);
-			createNestedCircle(center, diameter, layers, offset);
-			p5.pop();
-		}
-
 		p5.pop();
 	};
 
