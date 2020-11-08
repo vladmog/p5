@@ -116,7 +116,7 @@ function App() {
 						className="code"
 						href="https://github.com/vladmog/p5/blob/master/src/components/sketch12.js"
 					>
-						Rotating nested variable circles flower: Code
+						50 Nested variable circles, 3 directions: Code
 					</a>
 					<Sketch12 />
 				</section>
@@ -125,7 +125,7 @@ function App() {
 						className="code"
 						href="https://github.com/vladmog/p5/blob/master/src/components/sketch11.js"
 					>
-						Nested variable circles: Code
+						5 Nested variable circles: Code
 					</a>
 					<Sketch11 />
 				</section>
@@ -134,7 +134,7 @@ function App() {
 						className="code"
 						href="https://github.com/vladmog/p5/blob/master/src/components/sketch10.js"
 					>
-						Nested circles: Code
+						5 Nested circles: Code
 					</a>
 					<Sketch10 />
 				</section>
