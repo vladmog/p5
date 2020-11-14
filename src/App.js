@@ -13,6 +13,7 @@ import Sketch9 from "./components/sketch9";
 import Sketch10 from "./components/sketch10";
 import Sketch11 from "./components/sketch11";
 import Sketch12 from "./components/sketch12";
+import Sketch13 from "./components/sketch13";
 
 const S = {};
 
@@ -111,6 +112,17 @@ function App() {
 						<a href="https://p5js.org/">p5.js</a>.
 					</div>
 				</section>
+
+				<section>
+					<a
+						className="code"
+						href="https://github.com/vladmog/p5/blob/master/src/components/sketch11.js"
+					>
+						Phyllotaxis
+					</a>
+					<Sketch13 />
+				</section>
+
 				<section>
 					<a
 						className="code"
@@ -120,6 +132,7 @@ function App() {
 					</a>
 					<Sketch12 />
 				</section>
+
 				<section>
 					<a
 						className="code"
@@ -129,6 +142,7 @@ function App() {
 					</a>
 					<Sketch11 />
 				</section>
+
 				<section>
 					<a
 						className="code"
@@ -138,6 +152,7 @@ function App() {
 					</a>
 					<Sketch10 />
 				</section>
+
 				{/* <h2>Day 1</h2>
         <h3>First animation</h3>
         <a href = "https://github.com/vladmog/p5/blob/master/src/components/day1.js">Code</a>
