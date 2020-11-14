@@ -120,7 +120,7 @@ function App() {
 						className="code"
 						href="https://github.com/vladmog/p5/blob/master/src/components/sketch15.js"
 					>
-						100 Units of 5 Nested variable circles in phyllotaxis
+						170 Units of 5 Nested variable circles in phyllotaxis
 					</a>
 					<Sketch15 />
 				</section>
