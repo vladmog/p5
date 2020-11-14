@@ -14,6 +14,7 @@ import Sketch10 from "./components/sketch10";
 import Sketch11 from "./components/sketch11";
 import Sketch12 from "./components/sketch12";
 import Sketch13 from "./components/sketch13";
+import Sketch14 from "./components/sketch14";
 
 const S = {};
 
@@ -116,7 +117,7 @@ function App() {
 				<section>
 					<a
 						className="code"
-						href="https://github.com/vladmog/p5/blob/master/src/components/sketch11.js"
+						href="https://github.com/vladmog/p5/blob/master/src/components/sketch13.js"
 					>
 						Phyllotaxis
 					</a>
