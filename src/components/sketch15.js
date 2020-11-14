@@ -23,13 +23,12 @@ export default props => {
 		// p5.noLoop();
 	};
 
-    let dots = 100;
+    let dots = 170;
     let iterator = 1
 	// let dots = 1;
 
 	const draw = p5 => {
-		// let c = canvasHeight / 115; // approx between 2 and 3.7
-		let c = 16; // approx between 2 and 3.7
+		let c = 4 * (canvasHeight / 115); // approx between 9 and 16
         p5.translate(canvasWidth / 2, canvasHeight / 2);
         p5.background(255)
 		for (let n = 0; n < dots; n++) {
@@ -94,7 +93,9 @@ export default props => {
                 }
 			};
 	
-			let diameter = 28;
+            // let diameter = 23;
+            let diameter = canvasHeight * 0.05411764705882353;
+            console.log(diameter/canvasHeight)
 			let layers = 5;
 	
 			p5.stroke(1)
