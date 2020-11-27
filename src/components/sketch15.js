@@ -16,7 +16,7 @@ export default props => {
 		p5.createCanvas(canvasWidth, canvasHeight).parent(canvasParentRef);
 		p5.frameRate(30);
 		p5.angleMode("degrees");
-		p5.frameRate(200);
+		// p5.frameRate(4);
 		p5.background(255);
 		// p5.noFill()
 
@@ -90,12 +90,13 @@ export default props => {
 
                 for (let layer = 0; layer < layerDiameters.length; layer++) {
                     createCircle(layerCenters[layer], layerDiameters[layer]);
+                    // console.log("layers")
                 }
 			};
 	
             // let diameter = 23;
             let diameter = canvasHeight * 0.05411764705882353;
-            console.log(diameter/canvasHeight)
+            // console.log(diameter/canvasHeight)
 			let layers = 5;
 	
 			p5.stroke(1)

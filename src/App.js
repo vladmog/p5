@@ -16,6 +16,8 @@ import Sketch12 from "./components/sketch12";
 import Sketch13 from "./components/sketch13";
 import Sketch14 from "./components/sketch14";
 import Sketch15 from "./components/sketch15";
+import Sketch16 from "./components/sketch16";
+import Sketch17 from "./components/sketch17";
 
 const S = {};
 
@@ -116,6 +118,17 @@ function App() {
 				</section>
 
 				<section>
+					<a className = "code" href="https://github.com/vladmog/p5/blob/master/src/components/sketch17.js">Connected congruent points uses</a>
+					<Sketch17 />
+				</section>
+
+
+				<section>
+					<a className = "code" href="https://github.com/vladmog/p5/blob/master/src/components/sketch16.js">Connected congruent points</a>
+					<Sketch16 />
+				</section>
+
+				<section>
 					<a
 						className="code"
 						href="https://github.com/vladmog/p5/blob/master/src/components/sketch15.js"
@@ -125,7 +138,7 @@ function App() {
 					<Sketch15 />
 				</section>
 
-{/* 
+
 				<section>
 					<a
 						className="code"
@@ -134,9 +147,9 @@ function App() {
 						Nested circles in phyllotaxis
 					</a>
 					<Sketch14 />
-				</section> */}
+				</section>
 
-				<section>
+<section>
 					<a
 						className="code"
 						href="https://github.com/vladmog/p5/blob/master/src/components/sketch13.js"
@@ -244,9 +257,17 @@ function App() {
 					</a>
 					<Sketch5b />
 				</section>
+
+				
 			</S.Header>
 		</S.Container>
 	);
 }
 
 export default App;
+
+
+
+//======================
+
+
