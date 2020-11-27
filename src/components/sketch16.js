@@ -51,7 +51,7 @@ export default props => {
             }
         }
 
-        let margin = 50
+        let margin = 0
         let x1 = margin
         let y1 = margin
         let x2 = margin
