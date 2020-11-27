@@ -49,8 +49,8 @@ export default props => {
             }
         }
 
-        const generateGrid = (gridSize, complexity, x1, y1, x2, y2) => {
-            p5.strokeWeight(1);
+        const generateGrid = (gridSize, complexity, x1, y1, x2, y2, strokeWeight) => {
+            p5.strokeWeight(strokeWeight);
 
             const rowLength = (x1 - x2) * -1
             const columnInterval = rowLength / (gridSize)
@@ -64,27 +64,40 @@ export default props => {
                     let currX1 = x1 + column * columnInterval;
                     let currX2 = x1 + (column + 1) * columnInterval
                     let randomNum = p5.random([1, 2, 3, 4])
+                    let override = false;
+                    let distFromCenter = Math.floor(gridSize/2) - Math.floor((Math.abs(((gridSize - 1)/2) - row) + Math.abs(((gridSize - 1)/2) - column))/2) + 1
+                    let multiplier = 4;
+                    complexity = distFromCenter * multiplier;
+                    console.log("complexity", complexity)
 
                     // Top left corner
-                    if (randomNum !== 1) generateLines(currX1, currY1, currX2-rowInterval/2, currY1, currX1, currY2-rowInterval/2, currX1, currY1, complexity)
+                    if (override || randomNum !== 1) generateLines(currX1, currY1, currX2-rowInterval/2, currY1, currX1, currY2-rowInterval/2, currX1, currY1, complexity)
                     // Top right corner
-                    if (randomNum !== 2) generateLines(currX1+rowInterval/2, currY1, currX2, currY1, currX2, currY1, currX2, currY2-rowInterval/2, complexity)
+                    if (override || randomNum !== 2) generateLines(currX1+rowInterval/2, currY1, currX2, currY1, currX2, currY1, currX2, currY2-rowInterval/2, complexity)
                     // Bottom left corner
-                    if (randomNum !== 3) generateLines(currX1, currY1+rowInterval/2, currX1, currY2, currX1, currY2, currX2-rowInterval/2, currY2, complexity)
+                    if (override || randomNum !== 3) generateLines(currX1, currY1+rowInterval/2, currX1, currY2, currX1, currY2, currX2-rowInterval/2, currY2, complexity)
                     // Bottom right corner
-                    if (randomNum !== 4) generateLines(currX1+rowInterval/2, currY2, currX2, currY2, currX2, currY2, currX2, currY1 + rowInterval/2, complexity)
+                    if (override || randomNum !== 4) generateLines(currX1+rowInterval/2, currY2, currX2, currY2, currX2, currY2, currX2, currY1 + rowInterval/2, complexity)
                 }
             }
 
         }
 
         let margin = 0
+
+        let gridSize = 5
+
+
+        let complexity = 8
+
+        let strokeWeight = .5
+
         let x1 = margin
         let y1 = margin
         let x2 = canvasWidth - margin
         let y2 = canvasHeight - margin
 
-        generateGrid(7, 8, x1, y1, x2, y2)
+        generateGrid(gridSize, complexity, x1, y1, x2, y2, strokeWeight)
         
 
     
