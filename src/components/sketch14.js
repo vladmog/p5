@@ -2,7 +2,6 @@
 import React from "react";
 import Sketch from "react-p5";
 
-// Phyllotaxis
 
 export default props => {
 	let canvasWidth;

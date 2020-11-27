@@ -2,7 +2,6 @@
 import React from "react";
 import Sketch from "react-p5";
 
-// Phyllotaxis
 
 export default props => {
 	let canvasWidth;
@@ -16,7 +15,7 @@ export default props => {
 		p5.createCanvas(canvasWidth, canvasHeight).parent(canvasParentRef);
         p5.noLoop();
         p5.background(255)
-        // p5.frameRate(1)
+        // p5.frameRate(100)
 	};
 
 
@@ -65,19 +64,20 @@ export default props => {
                     let currX2 = x1 + (column + 1) * columnInterval
                     let randomNum = p5.random([1, 2, 3, 4])
                     let override = false;
-                    let distFromCenter = Math.floor(gridSize/2) - Math.floor((Math.abs(((gridSize - 1)/2) - row) + Math.abs(((gridSize - 1)/2) - column))/2) + 1
-                    let multiplier = 4;
-                    complexity = distFromCenter * multiplier;
+                    // override = true
+                    let distFromCenter = Math.floor(gridSize/2) - Math.floor((Math.abs(((gridSize - 1)/2) - row) + Math.abs(((gridSize - 1)/2) - column))/2)
+                    let multiplier = distFromCenter ;
+                    complexity = distFromCenter * multiplier + 4;
                     console.log("complexity", complexity)
 
                     // Top left corner
-                    if (override || randomNum !== 1) generateLines(currX1, currY1, currX2-rowInterval/2, currY1, currX1, currY2-rowInterval/2, currX1, currY1, complexity)
+                    if (override || p5.random([1, 2, 3, 4]) !== 1) generateLines(currX1, currY1, currX2-rowInterval/2, currY1, currX1, currY2-rowInterval/2, currX1, currY1, complexity)
                     // Top right corner
-                    if (override || randomNum !== 2) generateLines(currX1+rowInterval/2, currY1, currX2, currY1, currX2, currY1, currX2, currY2-rowInterval/2, complexity)
+                    if (override || p5.random([1, 2, 3, 4]) !== 2) generateLines(currX1+rowInterval/2, currY1, currX2, currY1, currX2, currY1, currX2, currY2-rowInterval/2, complexity)
                     // Bottom left corner
-                    if (override || randomNum !== 3) generateLines(currX1, currY1+rowInterval/2, currX1, currY2, currX1, currY2, currX2-rowInterval/2, currY2, complexity)
+                    if (override || p5.random([1, 2, 3, 4]) !== 3) generateLines(currX1, currY1+rowInterval/2, currX1, currY2, currX1, currY2, currX2-rowInterval/2, currY2, complexity)
                     // Bottom right corner
-                    if (override || randomNum !== 4) generateLines(currX1+rowInterval/2, currY2, currX2, currY2, currX2, currY2, currX2, currY1 + rowInterval/2, complexity)
+                    if (override || p5.random([1, 2, 3, 4]) !== 4) generateLines(currX1+rowInterval/2, currY2, currX2, currY2, currX2, currY2, currX2, currY1 + rowInterval/2, complexity)
                 }
             }
 
@@ -90,7 +90,7 @@ export default props => {
 
         let complexity = 8
 
-        let strokeWeight = .5
+        let strokeWeight = 1
 
         let x1 = margin
         let y1 = margin
